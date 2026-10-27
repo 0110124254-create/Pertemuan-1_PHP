@@ -31,7 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['proses'])) {
 
     // Menentukan keterangan hanya jika semua data valid.
     if (empty($errors)) {
-        if ((float) $nilaiBersih >= 70) {
+        $nilaiAngka = (float) $nilaiBersih;
+        if ($nilaiAngka >= 70) {
             $status = 'Lulus';
         } else {
             $status = 'Remedial';
